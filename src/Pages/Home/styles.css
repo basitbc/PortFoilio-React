@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;500;600;700&display=swap');
+
+.home-out-contr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.home-in-contr {
+    /* border: 1px solid; */
+    display: flex;
+    align-items: center;
+}
+
+.home-in-left {
+    display: flex;
+    /* border: 1px solid; */
+    justify-content: center;
+    align-items: center;
+    background-image: url("../../Components/Assets/Title.jpg");
+    background-repeat: no-repeat;
+    background-size: 370px;
+    background-position: center;
+    mask-image: url("../../Components/Assets/main.svg");
+    mask-repeat: no-repeat;
+
+}
+
+.home-in-left img {
+    width: 270px;
+
+}
+
+.img1 {
+    z-index: 999;
+}
+
+.home-in-right {
+    /* border: 1px solid; */
+    display: flex;
+    justify-content: center;
+}
+
+.text1 {
+    padding-left: 20px;
+    padding-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    line-height: 19;
+
+}
+
+.text2 {
+    padding-left: 20px;
+    padding-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.text2 span {
+    color: #8444DF
+}
+
+.text3 {
+    padding-left: 20px;
+    padding-bottom: 30px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.text3 span {
+    color: #8444DF
+}
+
+.cont4 {
+    padding-left: 20px;
+    border-radius: 40px;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.cont4 button {
+    font-size: 14.4px;
+    font-weight: 300;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 2px;
+    line-height: 14.4px;
+    background-color: #8444DF;
+    border: 0px transparent;
+    color: white;
+    padding: 15px 27px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    border-radius: 40px;
+    transition: 0.7s;
+    margin-right: 30px;
+}
+
+.cont4 button:hover {
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.icon-grid {
+    display: flex;
+    margin-left: 20px;
+    border-radius: 12px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 42px;
+    height: 41px;
+    transition: 0.3s;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.icon-grid:hover {
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.iconn {
+    width: 20px;
+    height: 20px;
+    color: #8444DF;
+}
