@@ -29,7 +29,7 @@ import {
   return (
    <Grid className='outer-container' sx={{display:{md:"flex", xs:"none"}}}  onMouseOver={()=>{show()}} onMouseOut={()=>{hide()}}>
     <Grid container className='inner-container' flexDirection={"column"}>
-   <Link to='/home' style={{textDecoration:"none"}}>
+   <Link to='/' style={{textDecoration:"none"}}>
    <Grid item className='item-container' marginBottom={"12px"}>
         
         <Typography color={"white"}>

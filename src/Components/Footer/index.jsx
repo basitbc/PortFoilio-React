@@ -15,7 +15,7 @@ const Footer = () => {
   return (
     <Grid className='outer-container1' sx={{display:{md:"none", xs:"flex"}}} >
     <Grid container className='inner-container1' flexDirection={"row"}>
-   <Link to='/home' style={{textDecoration:"none"}}>
+   <Link to='/' style={{textDecoration:"none"}}>
    <Grid item className='item-container1' onClick={()=>{setIsActive("1")}} backgroundColor= {isActive === "1"  ? 'salmon' : '#9252ed'}>
         <Typography color={"white"}>
         <HomeRoundedIcon sx={{fontSize:"30px"}}/>
