@@ -16,7 +16,6 @@ import jQuery from "../../Components/Assets/jquery.png"
 import vscode from "../../Components/Assets/vscode.png"
 import algoritms from "../../Components/Assets/algo.png"
 
-const skills1 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14]
 const skills =[{skillName:"HTML",
 image:html},{skillName:"CSS",
 image:css},{skillName:"JAVASCRIPT",
