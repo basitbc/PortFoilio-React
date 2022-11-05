@@ -9,7 +9,8 @@ import {
   import CodeRoundedIcon from '@mui/icons-material/CodeRounded';
   import CallRoundedIcon from '@mui/icons-material/CallRounded';
 import './styles.css'
-const Footer = () => {
+import SwitchButton from '../SwitchButton';
+const Footer = ({callback}) => {
     const [isActive, setIsActive] = useState(0);
 
   return (
@@ -75,6 +76,7 @@ const Footer = () => {
     </Grid>
     </Grid>
    </Link>
+   <SwitchButton callback={callback}/>
    </Grid>
    </Grid>
   )

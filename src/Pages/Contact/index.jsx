@@ -3,7 +3,7 @@ import "./styles.css";
 import React, { useState } from 'react';
 import send, { sendForm } from 'emailjs-com';
 
-const Contact = () => {
+const Contact = ({ischecked}) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
@@ -14,6 +14,9 @@ const Contact = () => {
     message: '',
     reply_to: '',
   });
+
+const bkcolor= ischecked ? "white": "black";
+const primarycolor= ischecked ? "#8444DF": "#8444DF";
 
 
 const handleSubmit = (e) => {
@@ -32,22 +35,22 @@ const handleSubmit = (e) => {
 };
 
   return (
-    <Grid className="main-cont3" container height="100vh" width="100vw"  sx={{padding:{xs:"70px 20px",md:" 120px 165px"}}}>
+    <Grid className="main-cont3" container height={"100vh"} sx={{padding:{xs:"70px 20px",md:" 120px 165px"}, backgroundColor : ischecked? '#2C3639': 'white'}}>
       <Grid container className="inside-cont3">
         <Grid item className='in-text31'>
         <hr
         style={{
             height: 2,
-            backgroundColor: "black",
+            backgroundColor: bkcolor,
             width:"5%"
         }}
     />
-          <Typography paddingLeft={"25px"} sx={{fontSize:"10px", lineHeight:"10px", letterSpacing:"1px", fontFamily:"'Poppins', sans-serif"}}>SAY HELLO</Typography> 
+          <Typography color={bkcolor} paddingLeft={"25px"} sx={{fontSize:"10px", lineHeight:"10px", letterSpacing:"1px", fontFamily:"'Poppins', sans-serif"}}>SAY HELLO</Typography> 
         </Grid>
-        <Grid item className='in-text32'><Typography sx={{fontSize:"25.6px", letterSpacing:"2px",fontWeight:500, fontFamily:"'Poppins', sans-serif"}} >CONTACT</Typography></Grid>
-        <Grid container className='skill-in-cont3' sx={{padding:"18px 48px"}}>
+        <Grid item className='in-text32'><Typography color={bkcolor} sx={{fontSize:"25.6px", letterSpacing:"2px",fontWeight:500, fontFamily:"'Poppins', sans-serif"}} >CONTACT</Typography></Grid>
+        <Grid container className='skill-in-cont3' sx={{padding:"18px 48px", bgcolor:ischecked?"#DDDDDD":""}}>
          <Typography color={"#8444DF"} fontSize="20px" fontWeight={"600"} marginBottom="30px" textTransform={"uppercase"}>Get in Touch</Typography>
-         <Grid container rowGap={2}  className='form1' style={{justifyContent:"space-between"}}>
+         <Grid container rowGap={2}  className='form1' sx={{justifyContent:"space-between"}}>
       
             <Grid xs={12} md={5.5}>
             <TextField
@@ -101,7 +104,7 @@ const handleSubmit = (e) => {
          </Grid>
         </Grid>
     </Grid>
-    <Grid position={"relative"} height={"100px"} width="120vw" sx={{display:{xs:"flex", md:"none"}}}>
+    <Grid position={"relative"} height={"100px"} width="120vw" sx={{display:{xs:"flex", md:"none"}, backgroundColor : ischecked? '#2C3639': 'white'}}>
       </Grid>
   </Grid>
   )

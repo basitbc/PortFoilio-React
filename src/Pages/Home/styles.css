@@ -58,9 +58,6 @@
     font-family: 'Poppins', sans-serif;
 }
 
-.text2 span {
-    color: #8444DF
-}
 
 .text3 {
     padding-left: 20px;
@@ -68,9 +65,7 @@
     font-family: 'Poppins', sans-serif;
 }
 
-.text3 span {
-    color: #8444DF
-}
+
 
 .cont4 {
     height: auto;
@@ -124,5 +119,4 @@
 .iconn {
     width: 20px;
     height: 20px;
-    color: #8444DF;
 }

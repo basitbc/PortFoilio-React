@@ -34,9 +34,11 @@ image:algoritms
 }]
 
 
-const Skills = () => {
+const Skills = ({ischecked}) => {
+  const bkcolor= ischecked ? "white": "black";
+  const primarycolor= ischecked ? "#8444DF": "#8444DF";
   return (
-  <Grid className="main-cont" container height="100vh" width="100vw"  sx={{padding:{xs:"70px 20px",md:" 120px 165px"}}}>
+  <Grid className="main-cont" container sx={{padding:{xs:"70px 20px",md:" 120px 165px"}, backgroundColor : ischecked? '#2C3639': 'white'}}>
       <Grid container className="inside-cont">
         <Grid item className='in-text1'>
         <hr
@@ -46,15 +48,15 @@ const Skills = () => {
             width:"5%"
         }}
     />
-          <Typography paddingLeft={"25px"} sx={{fontSize:"10px", lineHeight:"10px", letterSpacing:"1px", fontFamily:"'Poppins', sans-serif"}}>CHECK OUT MY</Typography> 
+          <Typography paddingLeft={"25px"} color={bkcolor} sx={{fontSize:"10px", lineHeight:"10px", letterSpacing:"1px", fontFamily:"'Poppins', sans-serif"}}>CHECK OUT MY</Typography> 
         </Grid>
-        <Grid item className='in-text2'><Typography sx={{fontSize:"25.6px", letterSpacing:"2px",fontWeight:500, fontFamily:"'Poppins', sans-serif"}} >SKILLS</Typography></Grid>
-        <Grid container className='skill-in-cont'>
+        <Grid item className='in-text2' color={bkcolor}><Typography sx={{fontSize:"25.6px", letterSpacing:"2px",fontWeight:500, fontFamily:"'Poppins', sans-serif"}} >SKILLS</Typography></Grid>
+        <Grid container className='skill-in-cont' sx={{bgcolor:ischecked?"#3F4E4F":"white"}}>
           {skills.map(skill=>{
             return(
-            <Grid className='skills-box' sx={{margin:{xs:"15px 5px",md:"20px 30px"}}} flexDirection={"column"}>
+            <Grid className='skills-box' sx={{margin:{xs:"15px 5px",md:"20px 30px"}, bgcolor:ischecked?"#DDDDDD":""}} flexDirection={"column"}>
             <img src={skill.image}  alt="logo"/>
-            <Typography fontSize={"11.2px"} fontWeight="bold" className='text-logo-name'>{skill.skillName}</Typography>
+            <Typography fontSize={"11.2px"} fontWeight="bold"  className='text-logo-name'>{skill.skillName}</Typography>
           </Grid>
           )
           })}

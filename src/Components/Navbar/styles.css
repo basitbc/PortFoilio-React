@@ -10,9 +10,9 @@
 .outer-container {
     position: fixed;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
-    background-color: #8444DF;
     height: 100vh;
     z-index: 9999;
     overflow: hidden;
