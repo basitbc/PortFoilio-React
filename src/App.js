@@ -7,7 +7,7 @@ import Skills from './Pages/Skills';
 import Works from './Pages/Works';
 import Contact from './Pages/Contact';
 import Footer from './Components/Footer';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 
 
@@ -19,9 +19,9 @@ function App() {
    
   return (
     <BrowserRouter>
-    <Navbar callback ={callback}/>
+    <Navbar callback ={callback} ischecked = {ischecked}/>
     {/* callback ={callback} */}
-    <Footer callback ={callback}/>
+    <Footer callback ={callback} ischecked = {ischecked}/>
   <Routes>
    <Route path='/' element={<Home ischecked={ischecked}/>}/>
    <Route path='/About' element={<About ischecked={ischecked}/>}/>

@@ -1,38 +1,43 @@
-import {  FormControl, Grid, TextField, Typography } from '@mui/material';
+import {  Dialog, Grid, Slide, TextField, Typography } from '@mui/material';
 import "./styles.css";
 import React, { useState } from 'react';
-import send, { sendForm } from 'emailjs-com';
+import  { sendForm } from 'emailjs-com';
+import { useRef } from 'react';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 const Contact = ({ischecked}) => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [subject, setSubject] = useState("");
-  const [message, setMessage] = useState("");
-  const [toSend, setToSend] = useState({
-    from_name: '',
-    to_name: '',
-    message: '',
-    reply_to: '',
-  });
-
+  const [open, setopen] = useState(false);
 const bkcolor= ischecked ? "white": "black";
-const primarycolor= ischecked ? "#8444DF": "#8444DF";
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
+
+const handleOpen=(()=>{
+  setopen(true);
+})
+
+const handleClose=(()=>{
+setopen(false);
+})
 
 
-const handleSubmit = (e) => {
+const sendData = (e) => {
   sendForm(
     'service_s8wxwqg',
     'template_vsb9udf',
-    toSend,
+    form.current,
     'BcGNB127J7CGrvLUa'
-  )
-    .then((response) => {
-      console.log('SUCCESS!', response.status, response.text);
-    })
-    .catch((err) => {
-      console.log('FAILED...', err);
-    });
+  ).then((result) => {
+    handleOpen();
+    console.log(result.text);
+}, (error) => {
+    console.log(error.text);
+}).finally(()=>{
+  document.getElementById("myForm").reset();
+})
 };
+const form = useRef();
 
   return (
     <Grid className="main-cont3" container height={"100vh"} sx={{padding:{xs:"70px 20px",md:" 120px 165px"}, backgroundColor : ischecked? '#2C3639': 'white'}}>
@@ -48,49 +53,53 @@ const handleSubmit = (e) => {
           <Typography color={bkcolor} paddingLeft={"25px"} sx={{fontSize:"10px", lineHeight:"10px", letterSpacing:"1px", fontFamily:"'Poppins', sans-serif"}}>SAY HELLO</Typography> 
         </Grid>
         <Grid item className='in-text32'><Typography color={bkcolor} sx={{fontSize:"25.6px", letterSpacing:"2px",fontWeight:500, fontFamily:"'Poppins', sans-serif"}} >CONTACT</Typography></Grid>
+        <form ref={form} id="myForm">
         <Grid container className='skill-in-cont3' sx={{padding:"18px 48px", bgcolor:ischecked?"#DDDDDD":""}}>
          <Typography color={"#8444DF"} fontSize="20px" fontWeight={"600"} marginBottom="30px" textTransform={"uppercase"}>Get in Touch</Typography>
          <Grid container rowGap={2}  className='form1' sx={{justifyContent:"space-between"}}>
-      
-            <Grid xs={12} md={5.5}>
+            <Grid item xs={12} md={5.5}>
             <TextField
+            name="name"
             fullWidth
           required
           id="outlined-required"
-          onChange={(e)=>{setName(e.target.value)}}
+          // onChange={(e)=>{setName(e.target.value)}}
           label="Name"
           placeholder='Your Name' 
         />
             </Grid>
-            <Grid xs={12} md={5.5}>
+            <Grid item xs={12} md={5.5}>
             <TextField
             fullWidth
+            name="email"
           required
-          onChange={(e)=>{setEmail(e.target.value)}}
+          // onChange={(e)=>{setEmail(e.target.value)}}
           id="outlined-required"
           label="Email"
           placeholder='Your Email'
         />
         
             </Grid>
-            <Grid xs={12}>
+            <Grid item xs={12}>
             <TextField
             fullWidth
           required
-          onChange={(e)=>{setSubject(e.target.value)}}
+          // onChange={(e)=>{setSubject(e.target.value)}}
           id="outlined-required"
           label="Subject"
+          name='subject'
           placeholder='Subject'
          
         />
             </Grid>
 
-            <Grid xs={12}>
+            <Grid item xs={12}>
             <TextField
             fullWidth
           id="outlined-multiline-static"
-          onChange={(e)=>{setMessage(e.target.value)}}
+          // onChange={(e)=>{setMessage(e.target.value)}}
           required
+          name="message"
           label="Message"
           multiline
           rows={4}
@@ -100,12 +109,34 @@ const handleSubmit = (e) => {
 
          </Grid>
          <Grid>
-         <button onClick={()=>{handleSubmit()}} className='button'>Send</button>
+         <button onClick={()=>{sendData()}} type="button" value={"send"} className='button'>Submit</button>
+         {/* <button  className='button'>Submit</button> */}
          </Grid>
         </Grid>
+         </form>
     </Grid>
     <Grid position={"relative"} height={"100px"} width="120vw" sx={{display:{xs:"flex", md:"none"}, backgroundColor : ischecked? '#2C3639': 'white'}}>
       </Grid>
+      <Dialog
+      open={open}  
+      TransitionComponent={Transition}
+      keepMounted
+      onClose={handleClose}
+      aria-describedby="alert-dialog-slide-description"
+      PaperProps={{
+        style: {
+          backgroundColor: 'white',
+          boxShadow: 'none',
+        }
+      }}
+      >
+        <Grid container className="SuccessDialog" display={"flex"} flexDirection="column" justifyContent={"center"} alignItems="center" padding={"40px"} >
+        <CheckCircleIcon color='success' fontSize='large'/>
+          <Typography fontFamily= "'Lato', sans-serif" fontWeight={"300"} fontSize="20px">
+            Message send Successfully
+          </Typography>
+        </Grid>
+      </Dialog>
   </Grid>
   )
 }

@@ -1,5 +1,5 @@
 import { Grid, Typography } from '@mui/material'
-import React, { useState } from 'react'
+import React from 'react'
 import {
    Link
   } from "react-router-dom";
@@ -10,15 +10,9 @@ import {
   import CallRoundedIcon from '@mui/icons-material/CallRounded';
   import "./styles.css";
 import SwitchButton from '../SwitchButton';
-import { useEffect } from 'react';
-  const Navbar = ({callback}) => {
-  //  const [ischecked, setIsChecked] = useState(false);
-  //  const callback=(checked)=>{
-  //    return console.log(checked, "in Navbar");
-  //   //  setIsChecked(checked);
-  //  }
-   
 
+  const Navbar = ({callback, ischecked}) => {
+  
     const hide=(()=>{
         const el = document.getElementsByClassName("text-container")
         for (var i = 0; i < el.length; i++) {
@@ -35,7 +29,7 @@ import { useEffect } from 'react';
    
 
   return (
-   <Grid className='outer-container' sx={{display:{md:"flex", xs:"none"},backgroundColor: "#6B5B95"}}  flexDirection="column" onMouseOver={()=>{show()}} onMouseOut={()=>{hide()}}> 
+   <Grid className='outer-container' sx={{display:{md:"flex", xs:"none"},backgroundColor:ischecked?"#6B5B95":"#8444DF"}}  flexDirection="column" onMouseOver={()=>{show()}} onMouseOut={()=>{hide()}}> 
     <Grid>
     <SwitchButton callback={callback}/>
     </Grid>

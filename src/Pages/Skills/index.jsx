@@ -36,9 +36,8 @@ image:algoritms
 
 const Skills = ({ischecked}) => {
   const bkcolor= ischecked ? "white": "black";
-  const primarycolor= ischecked ? "#8444DF": "#8444DF";
   return (
-  <Grid className="main-cont" container sx={{padding:{xs:"70px 20px",md:" 120px 165px"}, backgroundColor : ischecked? '#2C3639': 'white'}}>
+  <Grid className="main-cont" minHeight={"100vh"} minWidth="100vw" container sx={{padding:{xs:"70px 20px",md:" 120px 165px"}, backgroundColor : ischecked? '#2C3639': 'white'}}>
       <Grid container className="inside-cont">
         <Grid item className='in-text1'>
         <hr
