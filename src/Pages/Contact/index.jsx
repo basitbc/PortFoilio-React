@@ -40,7 +40,7 @@ const sendData = (e) => {
 const form = useRef();
 
   return (
-    <Grid className="main-cont3" container height={"100vh"} sx={{padding:{xs:"70px 20px",md:" 120px 165px"}, backgroundColor : ischecked? '#2C3639': 'white'}}>
+    <Grid className="main-cont3" container minHeight={"100vh"} sx={{padding:{xs:"70px 20px",md:" 120px 165px"}, backgroundColor : ischecked? '#2C3639': 'white'}}>
       <Grid container className="inside-cont3">
         <Grid item className='in-text31'>
         <hr
