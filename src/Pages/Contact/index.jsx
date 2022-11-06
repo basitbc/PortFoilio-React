@@ -54,7 +54,7 @@ const form = useRef();
         </Grid>
         <Grid item className='in-text32'><Typography color={bkcolor} sx={{fontSize:"25.6px", letterSpacing:"2px",fontWeight:500, fontFamily:"'Poppins', sans-serif"}} >CONTACT</Typography></Grid>
         <form ref={form} id="myForm">
-        <Grid container className='skill-in-cont3' sx={{padding:"18px 48px", bgcolor:ischecked?"#DDDDDD":""}}>
+        <Grid container className='skill-in-cont3' sx={{padding:"18px 48px", bgcolor:ischecked?"#DDDDDD":"", marginBottom:"10px"}}>
          <Typography color={"#8444DF"} fontSize="20px" fontWeight={"600"} marginBottom="30px" textTransform={"uppercase"}>Get in Touch</Typography>
          <Grid container rowGap={2}  className='form1' sx={{justifyContent:"space-between"}}>
             <Grid item xs={12} md={5.5}>
@@ -137,6 +137,8 @@ const form = useRef();
           </Typography>
         </Grid>
       </Dialog>
+      <Grid position={"relative"} height={"100px"} width="120vw" sx={{display:{xs:"flex", md:"none"}}}>
+      </Grid>
   </Grid>
   )
 }
